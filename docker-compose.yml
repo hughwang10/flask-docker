@@ -1,0 +1,6 @@
+web:
+  image: hugh/myflask01
+  #volumes: 
+  ports:
+    - "80:80"
+  #command: 
