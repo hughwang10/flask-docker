@@ -13,7 +13,7 @@ def main():
 
 @app.route("/api")
 def api():
-    return json.dumps(os.listdir("/app"))
+    return json.dumps(os.listdir("/data"))
 
 if __name__ == "__main__":
     # Only for debugging while developing
