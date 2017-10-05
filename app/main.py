@@ -1,5 +1,5 @@
 import os, json
-from flask import Flask, send_file
+from flask import Flask, send_file, render_template
 app = Flask(__name__)
 
 @app.route("/hello")
@@ -7,9 +7,11 @@ def hello():
     return "Hello World from Flask"
 
 @app.route("/")
+# def main():
+#     return send_file(app.static_folder + '/index.html')
 def main():
-    index_path = os.path.join(app.static_folder, 'index.html')
-    return send_file(index_path)
+    dir_list = os.listdir("/data")
+    return render_template('index.html', text=dir_list)
 
 @app.route("/api")
 def api():
