@@ -1,4 +1,5 @@
 #--no-cache
-docker image build -t hugh/myflask01 .
+repo='hugh/myflask01'
+docker image build -t $repo .
 docker rmi $(docker images -q --filter "dangling=true")
-docker images
+docker images | grep $repo
