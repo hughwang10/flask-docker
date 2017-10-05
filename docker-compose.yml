@@ -1,7 +1,11 @@
 web:
   image: hugh/myflask01
   volumes: 
+<<<<<<< HEAD
     - /home/hugh/myshare/projects/vf_Ireland_2017/swgw_afg17ga:/data  
+=======
+    - /home/hugh/Downloads/data/swgw_afg17ga:/data
+>>>>>>> 47d303edaff6fbd998953bb42da761bdd2b15382
   ports:
     - "80:80"
   #command: 
