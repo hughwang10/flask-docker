@@ -1,5 +1,5 @@
-import os, json
-from flask import Flask, send_file, render_template
+import os
+from flask import Flask, send_file, render_template, request, jsonify
 app = Flask(__name__)
 
 @app.route("/hello")
@@ -15,7 +15,7 @@ def main():
 
 @app.route("/api")
 def api():
-    return json.dumps(os.listdir("/data"))
+    return jsonify(os.listdir("/data")), 200
 
 if __name__ == "__main__":
     # Only for debugging while developing
