@@ -2,16 +2,12 @@ import os
 from flask import Flask, send_file, render_template, request, jsonify
 app = Flask(__name__)
 
-@app.route("/hello")
-def hello():
-    return "Hello World from Flask"
-
 @app.route("/")
 # def main():
 #     return send_file(app.static_folder + '/index.html')
 def main():
     dir_list = os.listdir("/data")
-    return render_template('index.html', text=dir_list,url_root=request.url_root[:-1] + ':8080')
+    return render_template('index.html', title='afglab@Athlone',text=dir_list,url_root=request.url_root[:-1] + ':8080')
 
 @app.route("/api")
 def api():
