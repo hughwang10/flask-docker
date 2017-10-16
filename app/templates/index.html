@@ -1,13 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>AFG SWGW releases</h1>
+<h1>afg swgw releases</h1>
 <ol type="1">
-  {% for item in text %}
-  <li><a href="{{url_root}}/?package_name={{item}}">{{item}}</a></li>
+  {% for package in text %}
+  <li><a href="{{url_root}}/?package_name={{package}}">{{package}}</a></li>
   {% if package_name %}
-  {% if package_name == item%}
+  {% if package_name == package%}
   <div>
-      <p>{{package_name}}</p>
+    <ul>
+        {% for file in package_list %}
+        <li><a href="{{url_root}}:8080/data/{{package}}/{{file}}">{{file}}</a></li>
+        {% endfor %}
+    </ul>
   </div>
   {% endif %}
   {% endif %}  

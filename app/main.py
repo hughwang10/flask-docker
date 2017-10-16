@@ -7,16 +7,27 @@ app = Flask(__name__)
 #     return send_file(app.static_folder + '/index.html')
 def main():
     dir_list = os.listdir("/data")
+
+    package_name=request.args.get('package_name')
+    package_list = None
+    if package_name:
+        package_list = os.listdir("/data/" + package_name)
+
     return \
     render_template('index.html', \
     title='afglab@Athlone', \
     text=dir_list, \
     url_root=request.url_root[:-1], \
-    package_name=request.args.get('package_name'))
+    package_name=package_name, \
+    package_list=package_list)
 
 @app.route("/api")
 def api():
-    return jsonify(os.listdir("/data")), 200
+    package_name=request.args.get('package_name')
+    if package_name:
+        return jsonify(os.listdir("/data/" + package_name)), 200
+    else:    
+        return jsonify(os.listdir("/data")), 200
 
 @app.route("/ip", methods=["GET"])
 def get_my_ip():
