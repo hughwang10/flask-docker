@@ -7,7 +7,12 @@ app = Flask(__name__)
 #     return send_file(app.static_folder + '/index.html')
 def main():
     dir_list = os.listdir("/data")
-    return render_template('index.html', title='afglab@Athlone',text=dir_list,url_root=request.url_root[:-1] + ':8080')
+    return \
+    render_template('index.html', \
+    title='afglab@Athlone', \
+    text=dir_list, \
+    url_root=request.url_root[:-1], \
+    package_name=request.args.get('package_name'))
 
 @app.route("/api")
 def api():

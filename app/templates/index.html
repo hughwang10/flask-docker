@@ -3,7 +3,14 @@
 <h1>AFG SWGW releases</h1>
 <ol type="1">
   {% for item in text %}
-  <li><a href="{{url_root}}/data/{{item}}">{{item}}</a></li>
+  <li><a href="{{url_root}}/?package_name={{item}}">{{item}}</a></li>
+  {% if package_name %}
+  {% if package_name == item%}
+  <div>
+      <p>{{package_name}}</p>
+  </div>
+  {% endif %}
+  {% endif %}  
   {% endfor %}
 </ol>  
 {% endblock %}
