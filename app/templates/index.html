@@ -3,14 +3,14 @@
 <h1>afg swgw releases</h1>
 <ol type="1">
   {% for package in text %}
-  <li><a href="{{url_root}}/?package_name={{package}}">{{package}}</a></li>
+  <li class="list-group-item-heading"><a href="{{url_root}}/?package_name={{package}}">{{package}}</a></li>
   {% if package_name %}
   {% if package_name == package%}
-  <div>
-    <ul>
-        {% for file in package_list %}
-        <li><a href="{{url_root}}:8080/data/{{package}}/{{file}}">{{file}}</a></li>
-        {% endfor %}
+  <div class="container">
+    <ul class="list-group">
+      {% for file in package_list %}
+      <li class="list-group-item-text"><a href="{{url_root}}:8080/data/{{package}}/{{file}}">{{file}}</a></li>
+      {% endfor %}
     </ul>
   </div>
   {% endif %}

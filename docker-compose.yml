@@ -1,8 +1,8 @@
 web:
   image: hugh/myflask01
   volumes: 
-    # - /home/hugh/myshare/projects/vf_Ireland_2017/swgw_afg17ga:/data  
-    - /home/hugh/Downloads/data/:/data
+    - /home/hugh/myshare/projects//vAFG17/archive:/data  
+    # - /home/hugh/Downloads/data/:/data
   ports:
     - "80:80"
   #command: 
