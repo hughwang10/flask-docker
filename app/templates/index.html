@@ -1,20 +1,61 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>afg swgw releases</h1>
-<ol type="1">
-{% for package in text %}
-  <li class="list-group-item-heading"><a href="{{url_root}}/?package_name={{package}}">{{package}}</a></li>
-{% if package_name %}
-{% if package_name == package%}
+<nav class="navbar navbar-default">
   <div class="container">
-    <ul class="list-group">
-{% for file in package_list %}
-      <li class="list-group-item-text"><a href="{{url_root}}:8080/data/{{package}}/{{file}}">{{file}}</a></li>
-{% endfor %}
-    </ul>
+    <div class="navbar-header">
+      <a class="navbar-brand" href="{{url_root}}">AFG Lab</a>
+    </div>
+<!--     <ul class="nav navbar-nav">
+      <li class="active"><a href="{{url_root}}">Home</a></li>
+    </ul> -->
   </div>
-{% endif %}
-{% endif %}
+</nav>
+      
+{% for package in text %}
+<div class="container">
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <a href="{{url_root}}/?package_name={{package}}">{{package}}</a>
+    </div>
+    {% if package_name %}
+    {% if package_name == package%}    
+      <div class="panel-body">
+        <div class="container">
+        <ul class="list-group">
+          {% for file in package_list %}
+              <li class="list-group-item-text"><a href="{{url_root}}:8080/  data/{{package}}/{{file}}">{{file}}</a></li>  
+          {% endfor %}
+        </ul> 
+      </div>
+      </div>     
+    {% endif %}
+    {% endif %}    
+  </div>
+</div>
 {% endfor %}
-</ol>  
+
+<!-- <ol type="1">
+{% for package in text %}
+<div class="container"> 
+    <div class="panel panel-info">      
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          <li class="list-group-item-heading"><a href="{{url_root}}/?package_name={{package}}">{{package}}</a></li>
+        </h3>
+      </div>  
+      {% if package_name %}
+      {% if package_name == package%}
+        <div class="panel-body">
+          <ul class="list-group">
+      {% for file in package_list %}
+            <li class="list-group-item-text"><a href="{{url_root}}:8080/data/{{package}}/{{file}}">{{file}}</a></li>
+      {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+      {% endif %} 
+    </div>
+    {% endfor %}     
+</div>
+</ol> -->
 {% endblock %}
