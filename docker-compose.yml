@@ -1,8 +1,8 @@
 web:
   image: hugh/myflask01
   volumes: 
-    - /home/hugh/myshare/projects//vAFG17/archive:/data  
-    # - /home/hugh/Downloads/data/:/data
+    # - /home/hugh/myshare/projects//vAFG17/archive:/data  
+    - /home/hugh/Downloads/data/:/data
   ports:
-    - "80:80"
+    - "10080:80"
   #command: 
