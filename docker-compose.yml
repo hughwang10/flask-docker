@@ -1,8 +1,6 @@
-web:
-  image: hugh/myflask01
+flask-lifegame:
+  build: ./lifegame
   volumes: 
-    # - /home/hugh/myshare/projects//vAFG17/archive:/data  
     - /home/hugh/Downloads/data/:/data
   ports:
-    - "10080:80"
-  #command: 
+    - "80:80"
