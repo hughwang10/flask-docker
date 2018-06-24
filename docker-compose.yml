@@ -1,6 +1,6 @@
 flask-lifegame:
   build: ./lifegame
   volumes: 
-    - /home/hugh/Downloads/data/:/data
+    - ./:/data
   ports:
     - "80:80"
