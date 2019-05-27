@@ -3,4 +3,4 @@ flask-lifegame:
   volumes: 
     - ./:/data
   ports:
-    - "80:80"
+    - "10080:80"
